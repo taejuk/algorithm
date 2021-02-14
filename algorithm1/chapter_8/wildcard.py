@@ -39,5 +39,5 @@ def matchMemoized(w, s):
     return 0
     
 if __name__=="__main__":
-    ret = match('*bb*', 'babbbc')
+    ret = match(0,0)
     print(ret)
