@@ -47,5 +47,5 @@ if __name__=="__main__":
     b = [3,4,7]
     cache = [[-1]*10 for j in range(10)]
     ret = jlis(-1,-1)
-    print(ret-2)
+    print(ret-2) #초기화 시킬 때 2 포함한 거 빼야한다,.
     
