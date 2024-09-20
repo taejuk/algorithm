@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/kimtaeju/Desktop/algorithm/chapter8/POLY'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: __Z4polyii, symObjAddr: 0x0, symBinAddr: 0x100003B00, symSize: 0x1E0 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _MOD, symObjAddr: 0x430, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x5B, offset: 0x5B, size: 0x8, addend: 0x0, symName: _cache, symObjAddr: 0x13F70, symBinAddr: 0x100008004, symSize: 0x0 }
+  - { offsetInCU: 0x4687, offset: 0x4687, size: 0x8, addend: 0x0, symName: __ZNSt3__14endlB8ue170006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_, symObjAddr: 0x2E0, symBinAddr: 0x100003DE0, symSize: 0x58 }
+  - { offsetInCU: 0x46C7, offset: 0x46C7, size: 0x8, addend: 0x0, symName: __ZNSt3__19use_facetB8ue170006INS_5ctypeIcEEEERKT_RKNS_6localeE, symObjAddr: 0x3BC, symBinAddr: 0x100003EBC, symSize: 0x2C }
+  - { offsetInCU: 0x7121, offset: 0x7121, size: 0x8, addend: 0x0, symName: __Z4polyii, symObjAddr: 0x0, symBinAddr: 0x100003B00, symSize: 0x1E0 }
+  - { offsetInCU: 0x71BD, offset: 0x71BD, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1E0, symBinAddr: 0x100003CE0, symSize: 0xD4 }
+  - { offsetInCU: 0x7283, offset: 0x7283, size: 0x8, addend: 0x0, symName: __ZNSt3__113basic_ostreamIcNS_11char_traitsIcEEElsB8ue170006EPFRS3_S4_E, symObjAddr: 0x2B4, symBinAddr: 0x100003DB4, symSize: 0x2C }
+  - { offsetInCU: 0x72B5, offset: 0x72B5, size: 0x8, addend: 0x0, symName: __ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenB8ue170006Ec, symObjAddr: 0x338, symBinAddr: 0x100003E38, symSize: 0x84 }
+  - { offsetInCU: 0x7321, offset: 0x7321, size: 0x8, addend: 0x0, symName: __ZNKSt3__15ctypeIcE5widenB8ue170006Ec, symObjAddr: 0x3E8, symBinAddr: 0x100003EE8, symSize: 0x38 }
+...
