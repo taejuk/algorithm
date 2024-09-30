@@ -5,21 +5,33 @@
 #include <string.h>
 
 using namespace std;
-vector<int> standard = {1,2,7,3,8,1,7,3,9,1,2};
-int m = 7;
-// 어떻게 하면 cache를 이용할 수 있을까?
-// 남은 숫자에 대해 
-// 경우의 수를 다 만드는 것은 아닌 거 같고 
-// remainlist와 remain에 대한 cache값을 만드는 것이 좋을 거 같은데
-// cache를 어떻게 저장할 것인가?
-// 남은 숫자들은 어떻게 할 것인가?
-int zimbabwe(vector<int> remainlist, int remain, bool issmall) {
+const int MOD = 1000000007;
+string e, digits;
+int n,m;
+int cache[1<<14][20][2];
 
-    
+int price(int index, int taken, int mod, int less) {
+    if(index==n) return (less && mod == 0) ? 1 : 0;
+
+    int &ret = cache[taken][mod][less];
+    if(ret != -1) return ret;
+    ret = 0;
+    for(int next = 0; next < n; ++next) {
+        if((taken && (1 << next)) == 0) {
+            if(!less && e[index] < digits[next]) continue;
+            if(next > 0 && digits[next-1] == digits[next] && (taken & (1<<(next-1))==0)) continue;
+
+            int nextTaken = taken | (1<<next);
+            int nextMod = (mod * 10 + digits[next] - '0') % m;
+            int nextLess = less || e[index] > digits[next];
+            ret += price(index+1, nextTaken, nextMod, nextLess);
+            ret %= MOD;
+        }
+    }
+    return ret;
 }
 
+
 int main() {
-    vector<int> list = {1,2,7,3,8,1,7,3,9,1,2};
-    sort(list.begin(), list.end());
 
 }
