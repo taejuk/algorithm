@@ -2,10 +2,11 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <algorithm>
 using namespace std;
 
 int graph[26][26];
-
+vector<char> ordered;
 vector<int> first_start;
 // a = is, b = iss인 경우에는 -1을 반환한다.
 int findDifPos(string a, string b) {
@@ -38,7 +39,7 @@ void dfsprint(int s, bool visited[26]) {
             dfsprint(i, visited);
         }
     }
-    cout << static_cast<char>(s+'a');
+    ordered.push_back('a'+s);
 }
 
 bool isPossible(int s, int d) {
@@ -60,7 +61,6 @@ void makeGraph(vector<string> words) {
             cout << "INVALID" << endl;
             exit(0);
         }
-        first_start.push_back(a[pos]-'a');
         graph[a[pos]-'a'][b[pos]-'a'] = 1;
     }
 }
@@ -68,14 +68,14 @@ void makeGraph(vector<string> words) {
 void printGraph() {
     bool visited[26];
     for(int i = 0; i < 26; i++) visited[i] = false;
-    for(int i = 0; i < first_start.size(); i++) {
-        if(!visited[first_start[i]]) dfsprint(first_start[i], visited);
-    }
+    
     for(int i = 0; i < 26; i++) {
         if(!visited[i]) {
             dfsprint(i,visited);
         }
     }
+    reverse(ordered.begin(), ordered.end());
+    
 }
 
 
@@ -84,4 +84,5 @@ int main() {
     vector<string> words = {"gg", "kia", "lotte", "lg", "hanwha"};
     makeGraph(words);
     printGraph();
+
 }
